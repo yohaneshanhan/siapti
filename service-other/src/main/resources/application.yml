@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: service-other
+
+server:
+  port: 8186
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka
+  instance:
+    hostname: localhost
