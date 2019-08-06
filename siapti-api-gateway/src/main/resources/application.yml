@@ -1,0 +1,62 @@
+spring:
+  application:
+    name: siapti-api-gateway
+
+server:
+  port: 8000
+ 
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+
+zuul:
+  prefix: /siapti
+  routes:
+    service-staff:
+      path: /service-staff/**
+      url: http://localhost:8181
+    service-dosen:
+      path: /service-dosen/**
+      url: http://localhost:8182
+    service-walistudi:
+      path: /service-walistudi/**
+      url: http://localhost:8183
+    service-mahasiswa:
+      path: /service-mahasiswa/**
+      url: http://localhost:8184
+    service-matakuliah:
+      path: /service-matakuliah/**
+      url: http://localhost:8185
+    service-other:
+      path: /service-other/**
+      url: http://localhost:8186
+    service-login-detail:
+      path: /service-login-detail/**
+      url: http://localhost:8187
+    service-reset-password:
+      path: /service-reset-password/**
+      url: http://localhost:8188
+    service-id-generator:
+      path: /service-id-generator/**
+      url: http://localhost:8189
+    service-jadwal-kuliah:
+      path: /service-jadwal-kuliah/**
+      url: http://localhost:8190
+    service-registrasi-matakuliah:
+      path: /service-registrasi-matakuliah/**
+      url: http://localhost:8191
+    service-hasil-studi:
+      path: /service-hasil-studi/**
+      url: http://localhost:8192
+    service-transkrip:
+      path: /service-transkrip/**
+      url: http://localhost:8193
+    service-kota:
+      path: /service-kota/**
+      url: http://localhost:8194
+    service-mono:
+      path: /service-mono/**
+      url: http://localhost:8195
